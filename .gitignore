@@ -1,0 +1,4 @@
+# ignone clion config file and build directory
+.idea
+cmake-build-debug
+

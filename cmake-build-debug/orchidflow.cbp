@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug"/>
+				<Option working_dir="/home/chris/orchidflow/orchidflow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug"/>
+				<Option working_dir="/home/chris/orchidflow/orchidflow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug"/>
+				<Option working_dir="/home/chris/orchidflow/orchidflow/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="orchidflow">
-				<Option output="/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/orchidflow" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug"/>
+				<Option output="/home/chris/orchidflow/orchidflow/cmake-build-debug/orchidflow" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/chris/orchidflow/orchidflow/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 orchidflow"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 orchidflow"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="orchidflow/fast">
-				<Option output="/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/orchidflow" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug"/>
+				<Option output="/home/chris/orchidflow/orchidflow/cmake-build-debug/orchidflow" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/chris/orchidflow/orchidflow/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,44 +77,44 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 orchidflow/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 orchidflow/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/chris/orchidflow/orchidflow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/base.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/base.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/dtype.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/dtype.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/graph.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/graph.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/node.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/node.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/op.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/op.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/tensor.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/tensor.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/tuple.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/tuple.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/include/variate.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/include/variate.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/src/graph/main.cpp">
+		<Unit filename="/home/chris/orchidflow/orchidflow/src/graph/main.cpp">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/test/catch.h">
+		<Unit filename="/home/chris/orchidflow/orchidflow/test/catch.h">
 			<Option target="orchidflow"/>
 		</Unit>
-		<Unit filename="/home/chris/cloud/orchidflow/orchidflow/CMakeLists.txt">
+		<Unit filename="/home/chris/orchidflow/orchidflow/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -1,4 +1,4 @@
-# Install script for directory: /home/chris/cloud/orchidflow/orchidflow
+# Install script for directory: /home/chris/orchidflow/orchidflow
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/chris/cloud/orchidflow/orchidflow/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/chris/orchidflow/orchidflow/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
