@@ -81,19 +81,28 @@ namespace orchidflow
         }
 
         template <typename randomType>
-        inline bool operator==(const Tensor<randomType>& s) {
+        inline bool operator==(const Tensor<randomType>& s) const {
             return (dtype_ == s.dtype() && shape_ == s.shape() && std::equal(s.begin(), s.end(), begin()));
         }
 
-        inline bool operator!=(const Tensor<valueType>& s) {
+        template <typename randomType>
+        inline bool operator!=(const Tensor<randomType>& s) const {
             return !(*this != s);
+        }
+
+        inline valueType& operator[](const size_t& index) {
+            return data_[index];
+        }
+
+        inline const valueType& operator[](const size_t& index) const {
+            return data_[index];
         }
 
         inline const Shape& shape() const {
             return shape_;
         }
 
-        inline const DTYPE dtype() const {
+        inline const DTYPE& dtype() const {
             return dtype_;
         }
 
@@ -115,37 +124,13 @@ namespace orchidflow
             std::copy(begin, end, begin());
         }
 
-        valueType data_{nullptr};
+        valueType *data_{nullptr};
         Shape shape_{0};
         size_t num_elements_;
         size_t num_allocated_data_{0};
         DeviceMask deviceMask_{DeviceMask::kCPU};
         DTYPE dtype_{Dtype::typeinfo2DTYPE(typeid(valueType).name())};
     };
-
-
-//    Tensor() = default;
-//    inline Tensor(const Shape& shape);
-//    inline Tensor(const Tensor<valueType>& s);
-//    inline Tensor(Tensor<valueType>&& s);
-//    inline Tensor(Shape& shape, valueType* data);
-//
-//    ~Tensor();
-//
-//    inline Tensor& operator=(const Tensor<valueType>& s);
-//    inline Tensor& operator=(Tensor<valueType>&& s);
-//
-//    inline bool operator==(Tensor<valueType>& s);
-//    inline bool operator!=(Tensor<valueType>& s);
-//
-//    inline valueType operator[](const Shape& s);
-//    inline valueType operator[](const std::initializer_list<valueType>& s);
-//    inline valueType * data();
-//
-//    inline Shape& shape();
-//
-//    inline DTYPE dtype();
-
 }
 
 #endif //ORCHIDFLOW_TENSOR_H

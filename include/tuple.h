@@ -96,11 +96,20 @@ namespace orchidflow
         }
 
 
-        bool operator==(const Tuple<valueType>& s) {
+        bool operator==(const Tuple<valueType>& s) const {
             return ((ndim() == s.ndim()) && std::equal(begin(), end(), s.begin()));
         }
 
-        bool operator!=(const Tuple<valueType>& s) {
+        bool operator!=(const Tuple<valueType>& s) const {
+            return !(*this == s);
+        }
+
+        bool operator==(const std::initializer_list<valueType>& s) const {
+            size_t ndim = s.end() - s.begin();
+            return (this->ndim() == ndim && std::equal(s.begin(), s.end(), begin()));
+        }
+
+        bool operator!=(const std::initializer_list<valueType>& s) const {
             return !(*this == s);
         }
 
@@ -137,8 +146,6 @@ namespace orchidflow
         inline void assign(RandomIterator begin, RandomIterator end) {
             std::copy(begin, end, data_);
         }
-
-
 
         valueType *data_{nullptr};
         size_t size_allocated_data_{0};
@@ -192,15 +199,18 @@ namespace orchidflow
 //        inline Shape& operator=(const std::initializer_list<dim_t>& s);
 
 
-        inline bool operator==(const Shape& s) {
+        inline bool operator==(const Shape& s) const {
             return static_cast<Tuple<dim_t>>(*this) == static_cast<Tuple<dim_t>>(s) ;
         }
+
 //        inline bool operator==(const Tuple<dim_t>& s);
 
-        inline bool operator!=(const Shape& s) {
+        inline bool operator!=(const Shape& s) const {
             return !(*this == s);
         }
 //        inline bool operator!=(const Tuple<dim_t>& s);
+
+
 
 
         // brief the total size of the tensor.
