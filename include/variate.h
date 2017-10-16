@@ -14,8 +14,10 @@ namespace orchidflow
     template <typename valueType>
     struct Variate
     {
-        Tensor<valueType> input_;
-        Tensor<valueType> grad_;
+        Tensor<valueType>* input_{nullptr};
+        Tensor<valueType>* grad_{nullptr};
+        valueType constAttr_;
+        bool isConstAttr_{true};
         bool havedgrad_{false};
         bool isgradzero_{true};
     };

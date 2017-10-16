@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <initializer_list>
 #include <ostream>
+#include <iostream>
 #include "base.h"
 
 
@@ -139,6 +140,16 @@ namespace orchidflow
 
 //        friend std::ostream & operator<<(std::ostream &os, Tuple<valueType> &s);
 //        friend std::istream & operator>>(std::istream &is, Tuple<valueType> &s);
+
+
+        friend std::ostream & operator<<(std::ostream &os, Tuple<valueType> &s) {
+            std::cout << "ndim: " << s.ndim() << std::endl;
+            std::cout << "shape like this: " << std::endl;
+            for(auto iter = s.begin(); iter != s.end(); ++ iter) {
+                std::cout << *iter << " ";
+            }
+            std::cout << std::endl;
+        }
 
     protected:
 

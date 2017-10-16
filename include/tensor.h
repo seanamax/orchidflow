@@ -8,6 +8,7 @@
 #include "base.h"
 #include "tuple.h"
 #include "dtype.h"
+#include <functional>
 
 namespace orchidflow
 {
@@ -21,13 +22,17 @@ namespace orchidflow
             num_elements_ = s.num_elements();
             num_allocated_data_ = num_elements_;
             data_ = new valueType[num_allocated_data_];
+            deviceMask_ = DeviceMask::kCPU;
+            deleteFunc_ = [](valueType* d){delete [] d;};
         }
 
-        inline Tensor(const Shape& s, DeviceMask dm) {
+        inline Tensor(const Shape& s, DeviceMask dm,
+                      std::function<valueType* (size_t)> allocated_func,
+                      std::function<void (valueType* )> delete_func) {
             shape_ = s;
             num_elements_ = s.num_elements();
             num_allocated_data_ = num_elements_;
-            data_ = new valueType[num_allocated_data_];
+            data_ = allocated_func(num_allocated_data_);
             deviceMask_ = dm;
         }
 
@@ -37,7 +42,22 @@ namespace orchidflow
             num_allocated_data_ = s.num_elements();
             data_ = new valueType[num_allocated_data_];
             assign(s.begin(), s.end());
-            deviceMask_ = s.deviceMask_;
+            deviceMask_ = DeviceMask::kCPU;
+        }
+
+        inline Tensor(const Tensor<valueType>& s, DeviceMask dm,
+                        std::function<valueType* (size_t)> allocated_func,
+                        std::function<void (valueType*)> deleted_func,
+                        std::function<valueType* (valueType *src, valueType *dst, size_t size)> copy_mem_func) {
+            shape_ = s.shape();
+            num_elements_ = s.num_elements();
+            num_allocated_data_ = s.num_elements();
+            deleteFunc_ = deleted_func;
+            deviceMask_ = dm;
+            if(dm == DeviceMask::kCPU) {
+                data_ = allocated_func(num_allocated_data_);
+                copy_mem_func(s.data_, data_, num_allocated_data_);
+            }
         }
 
         inline Tensor(Tensor<valueType>&& s) noexcept{
@@ -45,7 +65,7 @@ namespace orchidflow
             num_elements_ = s.num_elements();
             num_allocated_data_ = s.num_allocated_data_;
             data_ = s.data_;
-            deviceMask_ = s.deviceMask_;
+            deviceMask_ = DeviceMask::kCPU;
 
             s.shape_ = {};
             s.num_elements_ = 0;
@@ -55,7 +75,7 @@ namespace orchidflow
 
 
         ~Tensor() {
-            delete [] data_;
+            deleteFunc_(data_);
         }
 
         inline Tensor& operator=(const Tensor<valueType>& s) {
@@ -130,6 +150,9 @@ namespace orchidflow
         size_t num_allocated_data_{0};
         DeviceMask deviceMask_{DeviceMask::kCPU};
         DTYPE dtype_{Dtype::typeinfo2DTYPE(typeid(valueType).name())};
+
+        std::function<void (valueType*)> deleteFunc_{nullptr};
+        //std::function<void (valueType*)> allocateFunc_{nullptr};
     };
 }
 
