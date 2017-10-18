@@ -18,12 +18,6 @@ namespace orchidflow
 
     using dim_t = int64_t;
 
-    template <typename valueType>
-    class Node;
-
-    template <typename valueType>
-    class Op;
-
 
     enum class DeviceMask
     {
