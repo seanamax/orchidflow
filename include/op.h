@@ -5,11 +5,22 @@
 #ifndef ORCHIDFLOW_OP_H
 #define ORCHIDFLOW_OP_H
 
+#include "base.h"
+#include <string>
+#include <vector>
+#include <functional>
 #include <limits>
-#include "node.h"
 
 namespace orchidflow
 {
+    // forward declared
+    class Node;
+    struct NodeAttrs;
+    template <typename value_type>
+    class OpMap;
+    class OnGroup;
+    class OpRegistryEntry;
+
 
     template <typename value_type>
     class Registry;
