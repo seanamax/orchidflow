@@ -33,7 +33,6 @@ namespace orchidflow
     public:
         std::string name;
         std::string description;
-        std::vector<ParamFieldInfo> arguments;
 
         uint32_t num_inputs = 1;
         uint32_t num_outputs = 1;

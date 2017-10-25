@@ -40,34 +40,8 @@ namespace orchidflow
     }
 
     NodePtr Node::Create() {
-        NodePtr nodeptr = std::make_shared<Node>(new Node);
+        NodePtr nodeptr = std::shared_ptr<Node>(new Node);
         return nodeptr;
     }
 
-    Node::Node(const Node& s) {
-        attrs = s.attrs;
-        inputs = s.inputs;
-        control_deps = s.control_deps;
-    }
-
-    // TODO
-    Node::Node(Node&& s) noexcept {
-        //std::swap(attrs, s.attrs);
-//        std::swap(inputs, s.inputs);
-//        std::swap(control_deps, s.control_deps);
-    }
-
-    Node& Node::operator=(const Node & s) {
-        attrs = s.attrs;
-        inputs = s.inputs;
-        control_deps = s.control_deps;
-
-        return *this;
-    }
-
-    Node& Node::operator=(Node&& s) noexcept {
-        //std::swap(attrs, s.attrs);
-//        std::swap(inputs, s.inputs);
-//        std::swap(control_deps, s.control_deps);
-    }
 }
