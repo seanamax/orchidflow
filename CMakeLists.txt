@@ -3,6 +3,9 @@ project(orchidflow)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES src/graph/main.cpp include/tuple.h include/base.h include/tensor.h include/variate.h include/graph.h include/op.h include/node.h test/lib/catch.h include/dtype.h test/unittest/test_dtype.cpp test/unittest/test_tuple.cpp test/unittest/test_tensor.cpp test/unittest/test_node_op.cpp src/graph/node.cpp src/graph/op.cpp include/register.h)
+set(SOURCE_INCLUDE include/base.h include/dtype.h include/graph.h include/node.h include/op.h include/register.h include/tensor.h include/tuple.h include/variate.h)
+set(SOURCE_FILES src/graph/node.cpp src/graph/op.cpp src/graph/main.cpp)
+#set(TEST_FILES src/graph/main.cpp test/unittest/test_node_op.cpp test/unittest/test_dtype.cpp test/unittest/test_tuple.cpp test/unittest/test_tensor.cpp)
 
-add_executable(orchidflow ${SOURCE_FILES})
+add_executable(orchidflow ${SOURCE_INCLUDE} ${SOURCE_FILES})# ${TEST_FILES})
+

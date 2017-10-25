@@ -63,8 +63,6 @@ namespace orchidflow
 
         ~Node() {};
     };
-
-
 }
 
 #endif //ORCHIDFLOW_NODE_H

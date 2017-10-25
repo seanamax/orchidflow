@@ -8,15 +8,15 @@
 
 namespace orchidflow
 {
-    inline const Op* Node::op() const {
+    const Op* Node::op() const {
         return this->attrs.op;
     }
 
-    inline bool Node::is_variable() const {
+    bool Node::is_variable() const {
         return this->op() == nullptr;
     }
 
-    inline uint32_t Node::num_outputs() const {
+    uint32_t Node::num_outputs() const {
         if(is_variable()) {
             return 1;
         }
@@ -28,7 +28,7 @@ namespace orchidflow
         }
     }
 
-    inline uint32_t Node::num_inputs() const {
+    uint32_t Node::num_inputs() const {
         if(is_variable()) {
             return 1;
         }
@@ -40,7 +40,7 @@ namespace orchidflow
     }
 
     NodePtr Node::Create() {
-        NodePtr nodeptr = std::shared_ptr<Node>(new Node);
+        NodePtr nodeptr = std::make_shared<Node>();//std::shared_ptr<Node>(new Node);
         return nodeptr;
     }
 
