@@ -9,7 +9,6 @@
 #include <memory>
 #include "variate.h"
 
-
 namespace orchidflow
 {
     // Forward declare node.
@@ -53,10 +52,10 @@ namespace orchidflow
         std::vector<NodeEntry> inputs;
         std::vector<NodePtr> control_deps;
 
-        inline const Op* op() const;
-        inline bool is_variable() const;
-        inline uint32_t num_outputs() const;
-        inline uint32_t num_inputs() const;
+        const Op* op() const;
+        bool is_variable() const;
+        uint32_t num_outputs() const;
+        uint32_t num_inputs() const;
         static NodePtr Create();
 
         Node() = default;

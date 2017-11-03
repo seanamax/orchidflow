@@ -8,11 +8,11 @@
 
 namespace orchidflow
 {
-    const Op* Node::op() const {
+    inline const Op* Node::op() const {
         return this->attrs.op;
     }
 
-    bool Node::is_variable() const {
+    inline bool Node::is_variable() const {
         return this->op() == nullptr;
     }
 
