@@ -12,90 +12,46 @@
 
 namespace orchidflow
 {
+    // 获得计算图的正向计算顺序
+    std::vector<std::vector<NodePtr>> TopoSort(const std::vector<NodePtr>& node_list);
 
-//    template <typename valueType>
-//    class Graph
-//    {
-//    public:
-////        Graph() = default;
-////        Graph(const std::vector<Node<valueType>>& s);
-////        Graph(std::vector<Node<valueType>>&& s);
-////
-////        Graph& operator=(const std::vector<Node<valueType>>& s);
-////        Graph& operator=(std::vector<Node<valueType>>&& s) noexcept;
-////        Graph& operator=(const std::vector<Node<valueType>*>& s);
-////        Graph& operator=(std::vector<Node<valueType>*>&& s) noexcept;
-////        Node<valueType>& operator[](size_t index);
-////
-////        inline Node<valueType>* begin();
-////        inline Node<valueType>* end();
-////
-////        bool operator==(const std::vector<Node<valueType>>& s);
-////        bool operator!=(const std::vector<Node<valueType>>& s);
-////
-////        void forward();
-////        void backward();
-//
-//
-//
-//        Graph() = default;
-//        Graph(const std::vector<Node>& s);
-//        Graph(std::vector<Node>&& s);
-//
-//        Graph& operator=(const std::vector<Node>& s);
-//        Graph& operator=(std::vector<Node>&& s);
-//        Graph& operator=(const std::vector<Node*>& s);
-//        Graph& operator=(std::vector<Node*>&& s);
-//
-//        inline Node* begin();
-//        inline Node* end();
-//
-//        bool operator==(const std::vector<Node>& s);
-//        bool operator!=(const std::vector<Node>& s);
-//
-//        void forward();
-//        void backward();
-//
-//    private:
-//        std::vector<Node<valueType>> node_list_;
-//
-//    };
+    // 遍历到计算图的最终输出节点并返回最终输出节点
+    std::vector<NodePtr> find_final_outputs(NodePtr nodeptr);
 
+    // 递归到最终输入节点并递归返回节点的层级。
+    int find_final_inputs(std::map<NodePtr, int>& is_searched, NodePtr nodeptr);
 
-
-
-
-
-
-
-
-
-
+    // 获得计算图的反向计算顺序
+    std::vector<std::vector<NodePtr>> ReverseTopoSort(std::vector<std::vector<NodePtr>>& forward_compute_node_list);
 
     class Graph
     {
     public:
         Graph() = default;
-        Graph(const std::vector<Node>& s);
-        Graph(std::vector<Node>&& s);
+        Graph(const std::vector<NodePtr>& s);
+        Graph(std::vector<NodePtr>&& s);
 
-        Graph& operator=(const std::vector<Node>& s);
-        Graph& operator=(std::vector<Node>&& s);
-        Graph& operator=(const std::vector<Node*>& s);
-        Graph& operator=(std::vector<Node*>&& s);
+        Graph& operator=(const std::vector<NodePtr>& s);
+        Graph& operator=(std::vector<NodePtr>&& s);
 
-        inline Node* begin();
-        inline Node* end();
+
+        inline std::vector<NodePtr>::iterator begin();
+        inline std::vector<NodePtr>::iterator end();
 
         inline bool operator==(const Graph& s);
         inline bool operator!=(const Graph& s);
 
-        void forward();
-        void backward();
+        void forward_compute();
+        void gradient_compute();
+        void backward_compute();
 
     private:
-        std::vector<Node> node_list_;
+        std::vector<NodePtr> node_list_;
     };
+
+
+
+
 }
 
 #endif //ORCHIDFLOW_GRAPH_H

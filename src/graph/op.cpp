@@ -14,37 +14,19 @@ namespace orchidflow
         return *this;
     }
 
-    inline Op& Op::set_num_inputs(uint32_t n) {
-        this->num_inputs = n;
-        return *this;
+    inline void Op::forward_compute(NodeAttr& attr) {
+        forward_compute_fn(attr);
     }
 
-    inline Op& Op::set_num_inputs(std::function<uint32_t (const NodeAttrs &attr)> fn) {
-        this->get_num_inputs = fn;
-        return *this;
+    inline void Op::set_forward_compute(std::function<void(NodeAttr& attr)>& forward_compute_fn) {
+        this->forward_compute_fn = std::move(forward_compute_fn);
     }
 
-    inline Op& Op::set_num_outputs(uint32_t n) {
-        this->num_outputs = n;
-        return *this;
+    inline NodeAttr Op::gradient_compute(NodeAttr& attr) {
+        gradient_compute_fn(attr);
     }
 
-    inline Op& Op::set_num_outputs(std::function<uint32_t (const NodeAttrs &attr)> fn) {
-        this->get_num_outputs = fn;
-        return *this;
+    inline void Op::set_gradient_compute(std::function<NodeAttr(NodeAttr& )>& gradient_compute_fn) {
+        this->gradient_compute_fn = std::move(gradient_compute_fn);
     }
-
-    inline Op& Op::set_attr_parser(std::function<void (NodeAttrs* attrs)> fn) {
-        this->attr_parser = fn;
-        return *this;
-    }
-
-    template <typename value_type>
-    inline Op& Op::set_attr(const std::string& attr_name,
-                            const value_type &value,
-                            int plevel) {
-        assert(plevel > 0 && "pleval in set_attr must be greater than 0");
-
-    }
-
 }

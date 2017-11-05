@@ -12,6 +12,4 @@ using namespace orchidflow;
 TEST_CASE("test_node_op", "node_op_all_case") {
     auto node = Node::Create();
     REQUIRE(node->is_variable() == true);
-    REQUIRE(node->num_outputs() == 1);
-    REQUIRE(node->num_inputs() == 1);
 }
